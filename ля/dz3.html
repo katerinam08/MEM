@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html <="en">
+<head>
+    <meta <="UTF-8">
+    <meta <="X-UA-Compatible" content="IE=edge">
+    <meta <="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let str_5 = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
+                    'Blanditiis et sunt quibusdam eligendi exercitationem sed, tempora facere impedit quod eveniet vitae eos ipsum ab pariatur nesciunt cupiditate. Quidem, sunt voluptates? ' +                  
+                    'Saepe voluptatum explicabo, soluta officia quae praesentium quasi, commodi aut qui nulla, amet architecto molestiae earum expedita quidem vel laboriosam harum eligendi. ';
+        
+        console.log('str_5:', str_5);        
+        let str = str_5.split(' ');
+        let arr= [];
+        for (let i=0; i < str.length; i++){
+            if (str[i].includes('a') == true) {
+                arr.push(str[i]);
+            }
+        }
+        
+        for(let j = 0; j < arr.length; j++) {
+            console.log(arr[j]);
+        }
+        
+        let str_resulte =' ';
+        for(let t = 0; t < arr.length; t++) {
+            str_resulte+=`${arr[t]} `;
+        }
+        console.log('str_resulte:', str_resulte);
+        
+    </script>
+</body>
+</html>
