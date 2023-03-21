@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let FIO = prompt('Введите ФИО:');
+
+        let arr_fio = FIO.split(' ');
+
+        let last_name = arr_fio[2];
+
+        function gender(last_name) {
+            let end_index = last_name.length - 1;
+            let pre_end_index = end_index - 1;
+            let last_symbol = (last_name[pre_end_index] + last_name[end_index]).toUpperCase();
+
+            let gender;
+            
+            if (last_symbol == 'ИЧ') {
+                gender = 'М'; 
+            } else if (last_symbol == 'ЛЫ') {
+                gender = 'М'; 
+            } else if (last_symbol == 'НА') {
+                gender = 'Ж';
+            } else if (last_symbol == 'ЗЫ') {
+                gender = 'Ж'; 
+            }
+
+            return gender;
+
+        }
+        let g = gender(last_name);
+
+        function selectCar(last_name) {
+            let car = 'BMW';            
+
+            if (g == 'М') { 
+                car = 'Nissan';
+            }
+
+            return car;
+
+        }
+
+        let resulte = confirm("Марка вашего авто "+selectCar(last_name)+" ?");
+        let resulte_car;
+
+        if (resulte) {
+            alert("Ok.");
+        }  else {
+            resulte_car = prompt('Какая у вас марка авто?',); 
+            alert('Ok.');           
+        }
+        console.log('ФИО:', FIO);
+        console.log('Пол:', g);
+        console.log('Марка авто: ',selectCar(last_name));
+        if ( ( resulte_car == selectCar(last_name) ) || (resulte_car == undefined) ) {}
+           else {
+            console.log('Mарка авто:', resulte_car);
+        }
+    </script>
+</body>
+</html>
