@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объекты</title>
+</head>
+<body>
+    <script>
+        let employees = {
+             emp_no: '1001',
+             salaries: [
+                {
+                    salary: 15670,
+                    from_date: 2012
+                },
+                {
+                    salary: 50670,
+                    from_date: 2018
+                },
+                {
+                    salary: 30670,
+                    from_date: 2022
+                },
+             ],
+
+             get max() {
+                let s_max = 0;
+
+                for ( let i = 0; i < 3; i++) {
+                    s_max = Math.max(s_max,this.salaries[i].salary);
+                }
+
+                return `${s_max}`;
+             },
+
+            
+            get min() {
+                let i = 0;
+                let s_min = this.salaries[i].salary;
+                for ( i; i < 2; i++) {
+                    s_min = Math.min(s_min,this.salaries[i+1].salary);
+                }
+
+                return `${s_min}`;
+             },
+
+
+            get avg() {
+                let s_sum = 0;
+                let n = this.salaries.length;
+
+                for ( let i = 0; i < n; i++) {
+                    s_sum = s_sum + this.salaries[i].salary;
+                }
+
+                let s_avg = s_sum/n;
+
+                return `${s_avg}`;
+             },
+
+            };
+        console.log('Max з/п:',employees.max,'Min з/п:',employees.min,'Avg з/п:',employees.avg);
+        /*
+        console.log('Max з/п:',employees.max);
+        console.log('Min з/п:',employees.min);
+        console.log('Avg з/п:',employees.avg);
+        */
+    </script>
+</body>
+</html>
